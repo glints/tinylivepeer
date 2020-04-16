@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tiny.Livepeer</title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600&display=swap" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body id="admin">
+    <div class="adminpage page">
+
+      <h1 class="pagetitle">Tiny.Livepeer</h1>
+
+      <h2>Active ethereum address:</h2>
+      <div id="current-account" class="alert alert-success" role="alert">
+        {{ currentaddress }}
+      </div>
+
+
+      <div class="block">
+        <form id="livepeer-btns">
+          <button type="button" class="btn btn-primary claimearnings" @click="click('claimearnings',$event)">claim {{ numrounds }} earnings</button>
+        </form>
+      </div>
+
+    <div class="block">
+      <h2>General info</h2>
+      <ul v-cloak id="dashboard" class="dashboard">
+
+        <li v-for="item in items">
+          {{ item }}
+        </li>
+      </ul>
+
+    </div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/setupweb3.js"></script>
+    <script src="js/asyncrequest.js"></script>
+    <script src="js/contractabi.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/views.js"></script>
+  </body>
+</html>
